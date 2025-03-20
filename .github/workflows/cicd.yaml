@@ -14,7 +14,6 @@ jobs:
           ref: main
       - name: Add server to known hosts
         run: |
-          sudo mkdir -p /home/ec2-user/.ssh/known_hosts
           echo "${{ secrets.GIT_AWS }}" > /home/ec2-user/.ssh/git_aws.pem
           chmod 600 /home/ec2-user/.ssh/git_aws.pem
           ssh-keyscan -H $DOMAIN >> /home/ec2-user/.ssh/known_hosts
