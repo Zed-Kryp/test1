@@ -18,7 +18,7 @@ jobs:
           echo "${{ secrets.RM_SERVER_KEY }}" > ~/.ssh/git_aws.pem
           chmod 600 ~/.ssh/git_aws.pem
           ssh-keyscan -H $DOMAIN >> ~/.ssh/known_hosts
-env:
+        env:
           ACTIONS_RUNNER_DEBUG: true
       - name: Run test Deployment
         run: |
